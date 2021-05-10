@@ -8,7 +8,7 @@
 * [map](https://github.com/code4mk/golang-basic/tree/main/map)
 * [function](https://github.com/code4mk/golang-basic/tree/main/function)
 * [method](https://github.com/code4mk/golang-basic/tree/main/method)
-* [pointer](https://github.com/code4mk/golang-basic/tree/main/ponter)
+* [pointer](https://github.com/code4mk/golang-basic/tree/main/pointer)
 * [struct](https://github.com/code4mk/golang-basic/tree/main/struct)
 * [oop (inheritance,interface,polymorphism)](https://github.com/code4mk/golang-basic/tree/main/oop)
 
