@@ -1,31 +1,47 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
-//interface definition
-type VowelsFinder interface {
-	FindVowels() []rune
+type SalaryCalculator interface {
+	CalculateSalary() int
 }
 
-type MyString string
+type Permanent struct {
+	JobType string
+	Salary  int
+}
 
-//MyString implements VowelsFinder
-func (ms MyString) FindVowels() []rune {
-	var vowels []rune
-	for _, rune := range ms {
-		if rune == 'a' || rune == 'e' || rune == 'i' || rune == 'o' || rune == 'u' {
-			vowels = append(vowels, rune)
-		}
-	}
-	return vowels
+type Contractual struct {
+	JobType string
+	Salary  int
+}
+
+func (p Permanent) CalculateSalary() int {
+	return p.Salary
+}
+
+func (c Contractual) CalculateSalary() int {
+	return c.Salary + 1000
+}
+
+func TotalExpense(s SalaryCalculator) {
+	fmt.Println(s.CalculateSalary())
 }
 
 func main() {
-	name := MyString("Sam Anderson")
-	var v VowelsFinder
-	v = name // possible since MyString implements VowelsFinder
-	fmt.Printf("Vowels are %c", v.FindVowels())
+	fmt.Println("welcome")
 
+	empPermanent := Permanent{
+		JobType: "permanent",
+		Salary:  2000,
+	}
+
+	TotalExpense(empPermanent)
+
+	empContarctual := Contractual{
+		JobType: "contract",
+		Salary:  5000,
+	}
+
+	TotalExpense(empContarctual)
 }
