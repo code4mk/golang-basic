@@ -37,6 +37,9 @@ func main() {
 	}
 
 	TotalExpense(empPermanent)
+	// internal representation
+	var w SalaryCalculator = empPermanent
+	TotalExpense(w)
 
 	empContarctual := Contractual{
 		JobType: "contract",
@@ -44,4 +47,7 @@ func main() {
 	}
 
 	TotalExpense(empContarctual)
+	// internal representation
+	var y SalaryCalculator = empContarctual
+	TotalExpense(y)
 }
